@@ -1,0 +1,4 @@
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/harvey/Documents/my_mavros_ws/src/aruco_detect_land/models
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH://home/harvey/Documents/my_mavros_ws/src/aruco_detect_land/models_for_worlds
+source ~/Documents/my_mavros_ws/devel/setup.bash
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4_Firmware

@@ -1,0 +1,10 @@
+<launch>
+  <node name="aruco_det" pkg="aruco_detect_land" type="aruco_detect" output="screen" >
+    <param name="dictionary_id" value="11" />
+    <param name="aruco_id" value="27" />
+    <!-- aruco_length单位是米 -->
+    <param name="aruco_length" value="0.2" />
+    <param name="camera_param_path" value="$(find aruco_detect_land)/config/camera_gazebo.yaml" />
+  </node>
+</launch>
+

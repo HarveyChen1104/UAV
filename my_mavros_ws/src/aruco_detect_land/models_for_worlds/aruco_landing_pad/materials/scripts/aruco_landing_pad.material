@@ -1,0 +1,16 @@
+material Cube/aruco_landing_pad
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture 6x6_1000-27.png
+        scale 1.0 1.0
+      }
+    }
+  }
+}
+  
