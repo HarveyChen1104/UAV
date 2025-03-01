@@ -15,12 +15,15 @@ roslaunch px4 mavros_posix_sitl.launch
 rosrun offnode offnode_node
 ```
 
+==当PX4使用offboard模式时，应当先进offboard模式再解锁。== 若解锁后未及时进入 Offboard 模式，飞控可能默认进入其他模式（如 Position 模式），导致控制权混乱。
+
 ## 给定航点飞行
 在offnode功能包中，
 ```bash
 roslaunch px4 mavros_posix_sitl.launch
 rosrun offnode wayPointMission.py
 ```
+==当PX4使用mission模式时，应当先解锁再切mission。== Mission 模式依赖预设的航点任务，无需实时外部控制。解锁后，无人机默认进入稳定模式（如 Position 模式），操作者可先确保飞行环境安全，再手动切换到 Mission 模式。
 
 ## 识别aruco二维码降落
 在aruco_detect_land功能包中，
