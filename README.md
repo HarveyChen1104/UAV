@@ -3,6 +3,12 @@
 
 gazebo: .world, .model, plugin 
 
+world: 环境信息&module信息
+
+model: .urdf .sdf
+
+plugin: 模型绑定ROS，实现传感器输出，电机控制输入
+
 无人机gazebo仿真 = 实飞程序 + mavros + posix_sitl.launch
 
 posix_sitl.launch = PX4 + world.launch + spawn_model
