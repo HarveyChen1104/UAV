@@ -1,6 +1,12 @@
 # PX4入门
 本工作空间包含三个PX4仿真入门实验：指点飞行画矩形，地面站给定航点飞行和识别aruco二维码降落
 
+无人机gazebo仿真 = 实飞程序 + mavros + posix_sitl.launch
+
+posix_sitl.launch = PX4 + world.launch + spawn_model
+
+gazebo: .world, .model, plugin 
+
 ## 系统环境
 Ubuntu 20.04
 
