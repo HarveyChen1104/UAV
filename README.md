@@ -49,3 +49,9 @@ bash aruco_land_gazebo.sh
 相机模型使用的是PX4中自带的fpv_cam。通过话题去读取相机的内参，发现他的内参矩阵cx，cy参数是有问题的。
 实验结果是依据它提供的内参矩阵去识别aruco二维码，XY两个轴的数据有很大的误差。
 然后本人通过单目相机小孔成像模型的原理去尝试，应该把它提供的cx,cy两个内参参数除以2，实验结果也是很好的能够使aruco二维码识别估计其位置准确。
+
+mavros作为连接飞控端和ros端的程序，有这么四个坐标系，即飞控端的body系和local系及ros端的body系和local系：fcu_body,fcu_local,ros_body,ros_local。fcu坐标是系是NED，ROS坐标系是ENU，fuc_body坐标系又叫aircraft坐标系，ros_body坐标系又叫base_link坐标系。
+详见[基于mavros源码详解px4-mavros中的ENU NED FLU FRD坐标系及位姿转换](https://zhuanlan.zhihu.com/p/20734057891)
+
+在本程序中，mavros_msgs::PositionTarget 消息类型的frame设置为FRAME_LOCAL_NED,但我们在set Z值是还是给正值，因为mavros会自动转换坐标系。
+
